@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/custom.css" />
+
+    <title>Create an Account</title>
+  </head>
+  <body>
+    <form class="form-signin" action="" method="POST">
+      <h1 class="h3 mb-3 font-weight-normal">Create an Account</h1>
+      <p>Have an account already? <a href="./create">Sign In</a></p>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input
+        name="email"
+        type="email"
+        id="inputEmail"
+        class="form-control"
+        placeholder="Email address"
+        required=""
+        autofocus=""
+      />
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input
+        name="password"
+        type="password"
+        id="inputPassword"
+        class="form-control"
+        placeholder="Password"
+        required=""
+        oninput="check(this,'inputConfirmPassword')"
+      />
+      <label for="inputConfirmPassword" class="sr-only">Confirm Password</label>
+      <input
+        type="password"
+        id="inputConfirmPassword"
+        class="form-control"
+        placeholder="Confirm Password"
+        required=""
+        oninput="check(this,'inputPassword')"
+      />
+      <hr />
+      <label for="inputFirstName" class="sr-only">First Name</label>
+      <input
+        name="firstname"
+        type="text"
+        id="inputFirstName"
+        class="form-control"
+        placeholder="First Name"
+        required=""
+        autofocus=""
+      />
+      <label for="inputLastName" class="sr-only">Last Name</label>
+      <input
+        name="lastname"
+        type="text"
+        id="inputLastName"
+        class="form-control"
+        placeholder="Last Name"
+        required=""
+      />
+      <hr />
+
+      <label for="inputAddress" class="sr-only">Address</label>
+      <input
+        name="address"
+        type="text"
+        id="inputAddress"
+        class="form-control"
+        placeholder="Address"
+        required=""
+      />
+      <label for="inputCity" class="sr-only">Last Name</label>
+      <input
+        name="city"
+        type="text"
+        id="inputCity"
+        class="form-control"
+        placeholder="City"
+        required=""
+      />
+      <label for="inputState" class="sr-only">Last Name</label>
+      <input
+        name="state"
+        type="text"
+        id="inputState"
+        class="form-control"
+        placeholder="State"
+        required=""
+      />
+      <label for="inputZip" class="sr-only">Last Name</label>
+      <input
+        type="text"
+        id="inputZip"
+        class="form-control"
+        placeholder="Zip"
+        required=""
+      />
+      <hr />
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me" /> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Sign in
+      </button>
+      <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+    </form>
+    <script language="javascript" type="text/javascript">
+      function check(input, matchingId) {
+        if (input.value !== document.getElementById(matchingId).value) {
+          input.setCustomValidity("Password must be matching.");
+          document
+            .getElementById(matchingId)
+            .setCustomValidity("Password must be matching.");
+        } else {
+          // input is valid -- reset the error message
+          input.setCustomValidity("");
+          document.getElementById(matchingId).setCustomValidity("");
+        }
+      }
+    </script>
+  </body>
+</html>

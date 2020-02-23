@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>CSS WebPage</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul class="topnav" id="dropdownClick">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#news">News</a></li>
+        <li class="topnav-right"><a href="#signup">Sign Up</a></li>
+        <li class="topnav-right"><a href="#signin">Sign In</a></li>
+        <li class="dropdownicon">
+          <a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container" id="section-1-gradient">
+      <div class="row">
+        <div class="col-6">
+          <div class="leftside-col">
+            <h1 class="large">Crazy Radness</h1>
+            <h1 class="large">Made for Developers</h1>
+          </div>
+          <form>
+            <div class="leftside-col">
+              <h2>Username</h2>
+              <input
+                type="text"
+                class="inputbox"
+                placeholder="username"
+                name="username"
+              />
+              <h2>Password</h2>
+              <input
+                type="text"
+                class="inputbox"
+                placeholder="password"
+                name="password"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="col-6">
+          <div class="rightside-col">
+            <div class="videoContainer">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/mvADH_dLb4w"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <header>
+      <h1 class="sectionToHeader">Thes Standards of Awesomeness</h1>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <div class="box">
+            <div class="">
+              <img src="./download.png" alt="dev icon" />
+            </div>
+            <label>Chat with Me</label>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Doloremque officiis neque nulla cupiditate laboriosam hic dolorum.
+            </p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="box">
+            <div class="">
+              <img src="./download.png" alt="dev icon" />
+            </div>
+            <label>Learn to Code</label>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Doloremque officiis neque nulla cupiditate laboriosam hic dolorum.
+            </p>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="box">
+            <div class="">
+              <img src="./download.png" alt="dev icon" />
+            </div>
+            <label>Build an Empire</label>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Doloremque officiis neque nulla cupiditate laboriosam hic dolorum.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <button class="learnMore">Learn More</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

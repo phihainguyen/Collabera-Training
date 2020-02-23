@@ -1,0 +1,24 @@
+form {
+  width: 60%;
+  margin: 80px auto;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 3px #aaa;
+  text-align: center;
+  padding: 20px;
+}
+
+.comment {
+  height: 100px;
+  width: 500px;
+  border-radius: 5px;
+  display: block;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.submit {
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
