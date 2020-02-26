@@ -1,73 +1,54 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, Link, useParams } from 'react-router-dom';
-export default function Routing() {
+import Login from './Components/login';
+import Register from './Components/register';
+import Members from './Components/member';
+import { Navbar, Nav } from 'react-bootstrap';
+
+export default function App() {
+	const Links = [
+		{
+			name: 'Login',
+			to: '/'
+		},
+		{
+			name: 'Register',
+			to: '/register'
+		},
+		{
+			name: 'Members',
+			to: '/members'
+		}
+	];
 	return (
 		<Router>
 			<div>
-				<nav>
-					<ul>
-						<li>
-							<Link to="/">Home</Link>
-						</li>
-						<li>
-							<Link to="/about">About</Link>
-						</li>
-						<li>
-							<Link to="/users">Users</Link>
-						</li>
-					</ul>
-				</nav>
+				<Navbar bg="dark" variant="dark">
+					{Links.map((link) => {
+						return (
+							<Nav.Item>
+								<Nav.Link as={Link} to={link.to}>
+									{link.name}
+								</Nav.Link>
+							</Nav.Item>
+						);
+					})}
+				</Navbar>
+
 				{/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
 				<Switch>
-					<Route path="/about">
-						<About />
+					<Route path="/register">
+						<Register />
 					</Route>
-					<Route path="/users">
-						<Users />
-					</Route>
-					<Route path="/params/:param">
-						<Param />
+					<Route path="/members">
+						<Members />
 					</Route>
 					<Route path="/">
-						<Home />
+						<Login />
 					</Route>
 				</Switch>
 			</div>
 		</Router>
 	);
-}
-const Headline = (props) => {
-	return (
-		<div>
-			<h1>{props.title}</h1>
-			{props.children}
-		</div>
-	);
-};
-const FunctionalCounter = (props) => {
-	const [ count, setCount ] = useState(0);
-	return (
-		<div>
-			<p>You clicked {count} times</p>
-			<button onClick={() => setCount(count + 1)}>Click me</button>
-		</div>
-	);
-};
-function Param() {
-	let { param } = useParams();
-	return <Headline title={param} />;
-}
-function Home() {
-	return <Headline title="Home" />;
-}
-function About() {
-	return (
-		<h2>
-			<FunctionalCounter />
-		</h2>
-	);
-}
-function Users() {
-	return <Headline title="Users" />;
 }
