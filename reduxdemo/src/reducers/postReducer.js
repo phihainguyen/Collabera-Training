@@ -1,5 +1,6 @@
 import { FETCH_POSTS, NEW_POST } from '../actions/types';
-
+//reducer in short is also like an actions a function that returns an object
+//we want to set the initial state so that the reducer can process the state by comparing based on the action that is passed into it
 const initialState = {
 	items: [],
 	item: {}

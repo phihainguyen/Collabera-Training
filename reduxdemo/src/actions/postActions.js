@@ -1,4 +1,6 @@
 import { FETCH_POSTS, NEW_POST } from './types';
+//this is where we create our ACTION which is basically a function that returns an object
+
 
 export const fetchPosts = () => (dispatch) => {
 	// console.log('fetching');
