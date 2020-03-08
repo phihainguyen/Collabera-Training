@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Person from './Person/Person';
+// import Radium, { StyleRoot } from 'radium';
 
 class App extends Component {
 	state = {
@@ -97,7 +98,10 @@ class App extends Component {
 			fontSize: '20px',
 			borderRadius: '7px',
 			cursor: 'pointer',
-			margin: '10px'
+			margin: '10px',
+			':hover': {
+				backgroundColor: 'lightgreen'
+			}
 		};
 		let person;
 		if (this.state.showPerson) {
@@ -117,6 +121,9 @@ class App extends Component {
 				</div>
 			);
 			styles.backgroundColor = 'red';
+			styles[':hover'] = {
+				backgroundColor: 'salmon'
+			};
 		} else {
 			person = null;
 		}
@@ -131,10 +138,10 @@ class App extends Component {
 			<div className="App">
 				<header className="App-header">
 					<p className={classes.join(' ')}>This is Working!</p>
-					<button style={styles} onClick={() => this.switchNameHandler('Monkey D Luffy')}>
+					<button key={'nameChanger'} style={styles} onClick={() => this.switchNameHandler('Monkey D Luffy')}>
 						Switch Name
 					</button>
-					<button onClick={this.togglePerson} style={styles}>
+					<button key={'toggle'} onClick={this.togglePerson} style={styles}>
 						Toggle People
 					</button>
 					{person}
