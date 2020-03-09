@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-import Person from './Person/Person';
+import PersonList from '../components/PersonList/PersonList';
 // import Radium, { StyleRoot } from 'radium';
+import Cockpit from '../components/Cockpit/Cockpit';
 
 class App extends Component {
 	state = {
@@ -91,59 +92,30 @@ class App extends Component {
 	};
 	//we can look at the 2 Person tags that binds the this keyword and both does the same thing, they are both able to pass through the props referencing the correct this, thanks to arrow function able to inherits its lexical scope "this", even though it may be easier to write it can be inefficient and make yur app slow, since it may make your app rerender a lot
 	render() {
-		const styles = {
-			backgroundColor: 'green',
-			color: 'white',
-			padding: '10px',
-			fontSize: '20px',
-			borderRadius: '7px',
-			cursor: 'pointer',
-			margin: '10px',
-			':hover': {
-				backgroundColor: 'lightgreen'
-			}
-		};
 		let person;
 		if (this.state.showPerson) {
 			person = (
 				<div className="personContainer">
-					{this.state.persons.map((person, index) => {
-						return (
-							<Person
-								nameChanged={(event) => this.nameChangeHandler(event, person.id)}
-								key={person.id}
-								name={person.name}
-								age={person.age}
-								click={() => this.deletePersonHandler(index)}
-							/>
-						);
-					})}
+					<PersonList
+						persons={this.state.persons}
+						changed={this.nameChangeHandler}
+						clicked={this.deletePersonHandler}
+					/>
 				</div>
 			);
-			styles.backgroundColor = 'red';
-			styles[':hover'] = {
-				backgroundColor: 'salmon'
-			};
 		} else {
 			person = null;
 		}
-		let classes = [];
-		if (this.state.persons.length <= 2) {
-			classes.push('red');
-		}
-		if (this.state.persons.length <= 1) {
-			classes.push('bold');
-		}
+
 		return (
 			<div className="App">
 				<header className="App-header">
-					<p className={classes.join(' ')}>This is Working!</p>
-					<button key={'nameChanger'} style={styles} onClick={() => this.switchNameHandler('Monkey D Luffy')}>
-						Switch Name
-					</button>
-					<button key={'toggle'} onClick={this.togglePerson} style={styles}>
-						Toggle People
-					</button>
+					<Cockpit
+						showPerson={this.state.showPerson}
+						clicked={this.state.togglePerson}
+						persons={this.state.persons}
+						switch={this.switchNameHandler}
+					/>
 					{person}
 				</header>
 			</div>
